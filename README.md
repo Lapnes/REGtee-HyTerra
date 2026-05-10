@@ -59,7 +59,7 @@ Anda bebas untuk menggunakan, memodifikasi, dan mendistribusikan proyek ini untu
 
 Penggunaan perangkat lunak, arsitektur *backend*, dan desain perangkat keras ini untuk tujuan **komersial sangat dilarang** di bawah lisensi standar. Hal ini mencakup (namun tidak terbatas pada) penggabungan kode ini ke dalam produk berbayar atau penggunaan untuk operasional pertanian skala perusahaan.
 
-Jika Anda ingin menggunakan **REGtee HyTerra** untuk tujuan komersial, Anda wajib mendapatkan **Letter of Agreement (LOA) / Lisensi Komersial** terpisah. Silakan hubungi penulis secara langsung melalui profil GitHub ini untuk mendiskusikan persyaratan lisensi.
+Jika Anda ingin menggunakan **REGtee HyTerra** untuk tujuan komersial, Anda wajib mendapatkan **Letter of Agreement (LOA) / Lisensi Komersial** terpisah. Silakan hubungi Developer secara langsung melalui profil GitHub ini atau [Email](mailto:regteecloud@gmail.com) untuk mendiskusikan persyaratan lisensi.
 
 ---
 
