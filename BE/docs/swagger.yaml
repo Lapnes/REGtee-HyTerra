@@ -1,0 +1,199 @@
+definitions:
+  auth.Login:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    required:
+    - email
+    - password
+    type: object
+  auth.RefreshToken:
+    properties:
+      refresh_token:
+        type: string
+    required:
+    - refresh_token
+    type: object
+  auth.Register:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+      token:
+        type: string
+    required:
+    - email
+    - password
+    - token
+    type: object
+  auth.RequestToken:
+    properties:
+      email:
+        type: string
+    required:
+    - email
+    type: object
+info:
+  contact: {}
+paths:
+  /v1/auth/login:
+    post:
+      description: Generating jwt Session Token
+      parameters:
+      - description: Payload
+        in: body
+        name: Payload
+        required: true
+        schema:
+          $ref: '#/definitions/auth.Login'
+      responses:
+        "200":
+          description: Ok
+          schema:
+            type: string
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+        "403":
+          description: Forbidden
+          schema:
+            type: string
+        "404":
+          description: Not Found
+          schema:
+            type: string
+        "423":
+          description: Locked
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: Login User
+      tags:
+      - Auth
+  /v1/auth/refresh:
+    post:
+      description: Refresh Auth Token
+      parameters:
+      - description: Bearer Token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Payload
+        in: body
+        name: Payload
+        required: true
+        schema:
+          $ref: '#/definitions/auth.RefreshToken'
+      responses:
+        "200":
+          description: Ok
+          schema:
+            type: string
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+        "403":
+          description: Forbidden
+          schema:
+            type: string
+        "404":
+          description: Not Found
+          schema:
+            type: string
+        "423":
+          description: Locked
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: Refresh Auth Token
+      tags:
+      - Auth
+  /v1/auth/register:
+    post:
+      description: Student's data will be registered to the system
+      parameters:
+      - description: Payload
+        in: body
+        name: Payload
+        required: true
+        schema:
+          $ref: '#/definitions/auth.Register'
+      responses:
+        "200":
+          description: Ok
+          schema:
+            type: string
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+        "403":
+          description: Forbidden
+          schema:
+            type: string
+        "404":
+          description: Not Found
+          schema:
+            type: string
+        "423":
+          description: Locked
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: Register User
+      tags:
+      - Auth
+  /v1/auth/register/token:
+    post:
+      description: User request token for email verifications
+      parameters:
+      - description: Payload
+        in: body
+        name: Payload
+        required: true
+        schema:
+          $ref: '#/definitions/auth.RequestToken'
+      responses:
+        "200":
+          description: Ok
+          schema:
+            type: string
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+        "403":
+          description: Forbidden
+          schema:
+            type: string
+        "404":
+          description: Not Found
+          schema:
+            type: string
+        "423":
+          description: Locked
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: RequestToken User
+      tags:
+      - Auth
+swagger: "2.0"
