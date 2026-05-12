@@ -1,0 +1,3 @@
+[submodule "REGtee-HyTerra-FE"]
+	path = REGtee-HyTerra-FE
+	url = git@github.com:Lapnes/REGtee-HyTerra-FE.git
